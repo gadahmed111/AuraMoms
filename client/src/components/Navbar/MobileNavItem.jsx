@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { FaHome, FaShoppingBasket } from "react-icons/fa";
 import { HiArchive } from "react-icons/hi";
 import { IoIosContacts } from "react-icons/io";
+import { useTranslation } from "react-i18next"; // Import useTranslation hook
 
 const NavItem = () => {
+  const { t } = useTranslation(); // Initialize translation hook
+
   const staggerContainer = {
     hidden: { opacity: 0 },
     show: {
@@ -45,22 +48,22 @@ const NavItem = () => {
           className="relative"
         >
           <FaHome className="absolute -translate-y-1/2 top-1/2 mx-3" />
-          <p className="pl-10 py-3">Home</p>
+          <p className="pl-10 py-3">{t("home")}</p> {/* Translated "Home" */}
         </FlyOut>
 
         <FlyOut variants={staggerItem} to="/about" FlyoutContent>
           <HiArchive className="absolute -translate-y-1/2 top-1/2 mx-3" />
-          <p className="pl-10 py-3">About</p>
+          <p className="pl-10 py-3">{t("about")}</p> {/* Translated "About" */}
         </FlyOut>
 
         <FlyOut variants={staggerItem} to="/contact" FlyoutContent>
           <IoIosContacts className="absolute -translate-y-1/2 top-1/2 mx-3" />
-          <p className="pl-10 py-3">Contact</p>
+          <p className="pl-10 py-3">{t("contact")}</p> {/* Translated "Contact" */}
         </FlyOut>
 
         <FlyOut variants={staggerItem} to="/shop" FlyoutContent>
           <FaShoppingBasket className="absolute -translate-y-1/2 top-1/2 mx-3 " />
-          <p className="pl-10 py-3">Shop</p>
+          <p className="pl-10 py-3">{t("shop")}</p> {/* Translated "Shop" */}
         </FlyOut>
       </motion.div>
     </>

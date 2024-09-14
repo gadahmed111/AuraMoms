@@ -5,6 +5,7 @@ import { CiShoppingCart, CiHeart } from "react-icons/ci";
 import NavButton from "../ReUseable/NavButton.jsx";
 import ThemeMode from "../ReUseable/DarkModeButton";
 import MobileItems from "./MobileNavItem.jsx";
+import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -27,7 +28,10 @@ const Navbar = () => {
   };
 
   const [isOpen, setIsOpen] = useState(false);
-
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
   // Toggle the menu open/close
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -41,16 +45,16 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="flex justify-center items-center space-x-6 max-md:hidden">
           <select
-            name=""
-            id=""
+            onChange={changeLanguage}
+            defaultValue={i18n.language}
             className="border p-1 rounded-xl hover:border-gray-700 transition-all dark:bg-black dark:text-white"
           >
-            <option value="">EN</option>
-            <option value="">FR</option>
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
           </select>
           <CiShoppingCart className="cursor-pointer text-2xl hover:text-gray-500 transition-all" />
           <ThemeMode />
-          <NavButton>Sign Up</NavButton>
+          <NavButton>{t("signUp")}</NavButton>
         </div>
 
         {/* Hamburger Button for Mobile */}
@@ -97,20 +101,20 @@ const Navbar = () => {
                 exit="exit"
               >
                 <motion.select
-                  name=""
-                  id=""
                   variants={staggerItem}
-                  className="border ml-2 p-2  rounded-xl hover:border-gray-700 transition-all dark:bg-black dark:text-white mb-4"
+                  onChange={changeLanguage}
+                  defaultValue={i18n.language}
+                  className="border p-1 ml-2 rounded-xl hover:border-gray-700 transition-all dark:bg-black dark:text-white"
                 >
-                  <option value="">EN</option>
-                  <option value="">FR</option>
+                  <option value="en">EN</option>
+                  <option value="fr">FR</option>
                 </motion.select>
                 <motion.div variants={staggerItem} className="pl-2">
                   <ThemeMode />
                 </motion.div>
                 <motion.div variants={staggerItem} className="w-full px-2">
                   <NavButton className="px-2 py-2 text-sm w-full">
-                    Sign Up
+                    {t("signUp")}
                   </NavButton>
                 </motion.div>
               </motion.div>

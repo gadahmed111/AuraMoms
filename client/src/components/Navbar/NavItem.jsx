@@ -1,25 +1,28 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 const NavItem = ({ className = "" }) => {
+  const { t, i18n } = useTranslation(); // Using translation hook
+
   return (
-    <div
-      className={`${className}flex space-x-12 max-md:hidden text-black dark:text-white`}
-    >
+    <div className={`${className} flex space-x-12 max-md:hidden text-black dark:text-white`}>
       <FlyOut to="/" FlyoutContent>
-        <p>Home</p>
+        <p>{t("home")}</p> {/* Translated text */}
       </FlyOut>
       <FlyOut to="/about" FlyoutContent>
-        <p>About</p>
+        <p>{t("about")}</p> {/* Translated text */}
       </FlyOut>
       <FlyOut to="/contact" FlyoutContent>
-        <p>Contact</p>
+        <p>{t("contact")}</p> {/* Translated text */}
       </FlyOut>
       <FlyOut to="/blog" FlyoutContent>
-        <p>Contact</p>
+        <p>{t("blog")}</p> {/* Translated text */}
       </FlyOut>
     </div>
   );
 };
+
 const FlyOut = ({ children, to, FlyoutContent }) => {
   const [Open, setOpen] = useState(false);
   const ShowContent = Open && FlyoutContent;
@@ -39,31 +42,26 @@ const FlyOut = ({ children, to, FlyoutContent }) => {
            duration-200 ease-out dark:bg-white"
         />
       </NavLink>
-      {/* {ShowContent && (
-        <div className="absolute left-1/2 top-[60px] -translate-x-1/2 bg-white text-black">
-          <div className="absolute -top-10 bg-rose-600 left-0 right-0 h-6 bg-transparent" />
-          <FlyoutContent />
-        </div>
-      )} */}
     </div>
   );
 };
-// #09090b
-// #262626
+
 const NavBarFlyoutContent = () => {
   return (
     <>
       <div className="h-[60vh] w-[50rem] bg-white p-6 shadow-xl">
-        <h1>pricing Content</h1>
+        <h1>{t("pricing_content")}</h1> {/* Translated text */}
       </div>
     </>
   );
 };
-const MobileNav = ({}) => {
+
+const MobileNav = () => {
   return (
     <>
-      <h1>hello world</h1>
+      <h1>{t("hello_world")}</h1> {/* Translated text */}
     </>
   );
 };
+
 export default NavItem;
