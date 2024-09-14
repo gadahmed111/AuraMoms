@@ -39,7 +39,7 @@ const NavItem = () => {
         animate="show"
         exit="exit"
         variants={staggerContainer}
-        className="flex flex-col mt-5 h-fit w-full font-Cabin border-b-2 border-b-slate-300 mb-5  pb-4 gap-4 divide-gray-300 dark:divide-white text-black dark:text-white"
+        className="flex flex-col mt-5 h-fit w-full font-Cabin border-b-2 border-b-slate-300 mb-5  pb-4 gap-4 divide-gray-300 dark:divide-white text-black dark:text-white z-50"
       >
         <FlyOut
           variants={staggerItem}

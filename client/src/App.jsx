@@ -3,14 +3,16 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 function App() {
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route />
-          <Route />
-          <Route />
-        </Routes>
-      </Router>
+      <main className="h-[500vh]">
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route />
+            <Route />
+            <Route />
+          </Routes>
+        </Router>
+      </main>
     </>
   );
 }
