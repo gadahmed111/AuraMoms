@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import {
   motion,
@@ -6,7 +7,7 @@ import {
   useScroll,
 } from "framer-motion";
 import NavItem from "./NavItem.jsx";
-import { CiShoppingCart, CiHeart } from "react-icons/ci";
+import { CiShoppingCart } from "react-icons/ci";
 import NavButton from "../ReUseable/NavButton.jsx";
 import ThemeMode from "../ReUseable/DarkModeButton";
 import MobileItems from "./MobileNavItem.jsx";
@@ -89,7 +90,6 @@ const Navbar = () => {
           <NavButton>{t("signUp")}</NavButton>
         </div>
 
-        {/* Hamburger Button for Mobile */}
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
