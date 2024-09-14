@@ -1,14 +1,21 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
 import Navbar from "../Navbar/Navbar";
-
-const mainPage = () => {
+import TheCenterPatInHeroSection from '../hero section center/TheCenterPart'
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+function HomePage() {
   return (
     <>
-      <main>
+      <Router>
         <Navbar />
-      </main>
+        <TheCenterPatInHeroSection></TheCenterPatInHeroSection>
+        <Routes>
+          <Route />
+          <Route />
+          <Route />
+        </Routes>
+      </Router>
     </>
   );
-};
+}
 
-export default mainPage;
+export default HomePage;

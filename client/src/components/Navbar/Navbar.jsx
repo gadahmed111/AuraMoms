@@ -1,11 +1,22 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+=======
+/* eslint-disable no-unused-vars */
+import React from "react";
+>>>>>>> f85dd91 (add center of hero)
 import NavItem from "./NavItem.jsx";
 import { CiShoppingCart, CiHeart } from "react-icons/ci";
 import NavButton from "../ReUseable/NavButton.jsx";
 import ThemeMode from "../ReUseable/DarkModeButton";
+<<<<<<< HEAD
 import MobileItems from "./MobileNavItem.jsx";
 import { useTranslation } from "react-i18next";
+=======
+import { motion } from "framer-motion";
+// import NavInput from "./NavInput.jsx";
+// import Wavify from "react-wavify";
+>>>>>>> f85dd91 (add center of hero)
 const Navbar = () => {
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -38,9 +49,16 @@ const Navbar = () => {
   };
 
   return (
+<<<<<<< HEAD
     <>
       <nav className="flex justify-between items-center px-4 h-24 text-[#799263] font-Cabin dark:bg-DarkColor shadow-2xl bg-[#fff]">
         <h1 className="text-2xl text-black dark:text-white">Aura Moms</h1>
+=======
+    <div className="NavBarMainBody">
+      <motion.nav
+       className="flex justify-between items-center px-4 h-24 bg-[#dde2cc] text-[#799263] font-Cabin dark:bg-DarkColor">
+        <h1 className="text-3xl text-black dark:text-white">Aura Moms</h1>
+>>>>>>> f85dd91 (add center of hero)
         <NavItem />
         {/* Desktop Menu */}
         <div className="flex justify-center items-center space-x-6 max-md:hidden">
@@ -56,6 +74,7 @@ const Navbar = () => {
           <ThemeMode />
           <NavButton>{t("signUp")}</NavButton>
         </div>
+<<<<<<< HEAD
 
         {/* Hamburger Button for Mobile */}
         <div className="md:hidden">
@@ -123,6 +142,10 @@ const Navbar = () => {
         </AnimatePresence>
       </nav>
     </>
+=======
+      </motion.nav>
+    </div>
+>>>>>>> f85dd91 (add center of hero)
   );
 };
 

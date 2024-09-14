@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -55,7 +57,10 @@ const NavBarFlyoutContent = () => {
     </>
   );
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> f85dd91 (add center of hero)
 const MobileNav = () => {
   return (
     <>

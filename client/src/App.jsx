@@ -1,16 +1,10 @@
-import Navbar from "./components/Navbar/Navbar";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+// import 'App.css';
+import HomePage from "./components/homePage/mainPage";
 function App() {
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route />
-          <Route />
-          <Route />
-        </Routes>
-      </Router>
+    <HomePage></HomePage>
     </>
   );
 }
