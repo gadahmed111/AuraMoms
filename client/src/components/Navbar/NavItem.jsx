@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-const NavItem = () => {
+const NavItem = ({ className = "" }) => {
   return (
-    <div className="flex space-x-12 max-md:hidden text-black dark:text-white">
+    <div
+      className={`${className}flex space-x-12 max-md:hidden text-black dark:text-white`}
+    >
       <FlyOut to="/" FlyoutContent>
         <p>Home</p>
       </FlyOut>
@@ -34,7 +36,7 @@ const FlyOut = ({ children, to, FlyoutContent }) => {
           style={{ transform: ShowContent ? "scaleX(1)" : "scaleX(0)" }}
           className="absolute -bottom-2 -left-2 h-1 -right-2 
             rounded-full bg-[black] transition-all
-           duration-200 ease-out dark:bg-white" 
+           duration-200 ease-out dark:bg-white"
         />
       </NavLink>
       {/* {ShowContent && (
