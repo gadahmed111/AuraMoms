@@ -4,14 +4,12 @@ import { CiShoppingCart, CiHeart } from "react-icons/ci";
 import NavButton from "../ReUseable/NavButton.jsx";
 import DarkModeButton from "../ReUseable/DarkModeButton";
 import ThemeMode from "../ReUseable/DarkModeButton";
-import { motion } from "framer-motion ";
 // import NavInput from "./NavInput.jsx";
 // import Wavify from "react-wavify";
 const Navbar = () => {
   return (
     <>
-      <motion.nav
-       className="flex justify-between items-center px-4 h-24  text-[#799263] font-Cabin dark:bg-DarkColor">
+      <nav className="flex justify-between items-center px-4 h-24  text-[#799263] font-Cabin dark:bg-DarkColor">
         <h1 className="text-2xl text-black dark:text-white">Aura Moms</h1>
         <NavItem />
         <div className="flex justify-center items-center space-x-6 max-lg:hidden">
@@ -28,7 +26,7 @@ const Navbar = () => {
           <ThemeMode />
           <NavButton className="">sign up</NavButton>
         </div>
-      </motion.nav>
+      </nav>
     </>
   );
 };
