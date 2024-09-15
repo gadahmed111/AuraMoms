@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <>
-      <main className="h-[400vh]">
+      <main className="dark:bg-DarkBackground h-[400vh]">
         <HomePage />
       </main>
     </>

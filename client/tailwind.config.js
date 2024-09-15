@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: "class",
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class", // Enable dark mode with class strategy
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"], 
   theme: {
     extend: {
       fontFamily: {
@@ -9,14 +9,23 @@ export default {
         Cabin: ["Cabin", "sans-serif"],
       },
       colors: {
-        DarkBackground: "#09090b",  
-        DarkText: "#e5e5e5",
+        // Dark mode colors
+        DarkBackground: "#0f172a", 
+        DarkText: "#e5e5e5", 
         DarkAccent: "#262626",
-        DarkLink: "#b3b3b3",
-        LightBackground: "#ffffff",
-        LightText: "#000000",
-        LightAccent: "#f0f0f0",
-        LIghtLink: "#1d72b8",
+        GreenColorInDarkMood: "#b4b9a1",
+        DarkLink: "#b3b3b3", 
+
+        // Light mode colors
+        LightBackground: "#ffffff", 
+        LightText: "#000000", 
+        LightAccent: "#f0f0f0", 
+        LightLink: "#1d72b8", 
+
+        // colors
+        cardLightBg: "#ffffff", 
+        cardDarkBg: "#374151", 
+        CardBlue:"#7f95eb"
       },
     },
   },

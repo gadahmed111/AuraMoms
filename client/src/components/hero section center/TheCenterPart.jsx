@@ -1,10 +1,23 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 function TheCenterPart() {
   const FaceBook = useRef();
   const insta = useRef();
   const tiktok = useRef();
+  
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 282);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Check on mount
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Variants for text animation
   const textVariant = {
@@ -50,13 +63,16 @@ function TheCenterPart() {
       >
         {/* Big Text Animation */}
         <motion.div className="TheBigTxt">
-          <h3 className="text-4xl leading-normal font-extrabold">
+          <h3
+            className="leading-normal font-extrabold"
+            style={{ fontSize: isSmallScreen ? '1.5rem' : '3rem' }} // Adjust font size based on screen width
+          >
             Empowering Moms with <br /> Every Thoughtful Product Choice
           </h3>
         </motion.div>
 
         {/* Subtext Animation */}
-        <motion.div className="tracking-wider mt-9 text-base leading-normal dark:text-white">
+        <motion.div className="tracking-wider mt-9 text-base text-lg leading-normal dark:text-white">
           <p>
             Supporting moms with practical solutions and resources to make
             parenting
@@ -78,7 +94,7 @@ function TheCenterPart() {
 
         {/* Social Media Icons Animation */}
         <motion.div
-          className="select-none FindUs text-xl flex gap-3 mb-10 ml-2 pb-10 mt-20"
+          className="select-none FindUs text-xl flex gap-3 mb-2 ml-2 pb-10 mt-48"
           initial="hidden"
           animate="visible"
           variants={iconVariant}
@@ -86,7 +102,7 @@ function TheCenterPart() {
           <p>Find Us On:</p>
           <div className="flex gap-3 items-center icons">
             <motion.a
-              whileHover={{ scale: 1.2, y: -5, transition: { duration: 0.1 } }} // optional Transition If you like it pro
+              whileHover={{ scale: 1.2, y: -5, transition: { duration: 0.1 } }}
               ref={FaceBook}
               className="opacity-70 hover:opacity-100 transition-opacity duration-300 inline-block w-6"
               href="#"
@@ -95,7 +111,7 @@ function TheCenterPart() {
               <img src="./icons/findusIcons/pinterest.svg" alt="Pinterest" />
             </motion.a>
             <motion.a
-              whileHover={{ scale: 1.2, y: -5, transition: { duration: 0.1 } }} // optional Transition If you like it pro
+              whileHover={{ scale: 1.2, y: -5, transition: { duration: 0.1 } }}
               ref={insta}
               className="opacity-70 hover:opacity-100 transition-opacity duration-300 inline-block w-6"
               href="#"
@@ -104,7 +120,7 @@ function TheCenterPart() {
               <img src="./icons/findusIcons/instagram.svg" alt="Instagram" />
             </motion.a>
             <motion.a
-              whileHover={{ scale: 1.2, y: -5, transition: { duration: 0.1 } }} // optional Transition If you like it pr
+              whileHover={{ scale: 1.2, y: -5, transition: { duration: 0.1 } }}
               ref={tiktok}
               className="opacity-70 hover:opacity-100 transition-opacity duration-300 inline-block w-6"
               href="#"
@@ -118,7 +134,7 @@ function TheCenterPart() {
 
       {/* Image Animation */}
       <motion.div
-        className="absolute right-16 bottom-10"
+        className="absolute right-16 bottom-36"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, repeatType: "mirror", infinite: true }}
