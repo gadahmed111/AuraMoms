@@ -1,0 +1,89 @@
+import React from "react";
+import { motion } from "framer-motion";
+import NavButton from "../ReUseable/NavButton";
+
+const Cards = () => {
+  const Image = [
+    {
+      id: 1,
+      src: "./public/products/Pro1.png",
+      title: "Pro 1",
+      description: "Very nice and the price is good",
+    },
+    {
+      id: 2,
+      src: "./public/products/Pro2.png",
+      title: "Pro 2",
+      description: "A serene path through the forest.",
+    },
+    {
+      id: 3,
+      src: "./public/products/Pro3.png",
+      title: "Pro 3",
+      description: "A sandy desert under the blue sky.",
+    },
+    {
+      id: 4,
+      src: "./public/products/Pro4.png",
+      title: "Pro 4",
+      description: "An adventure through the desert.",
+    },
+  ];
+
+  // Variants for stagger animation
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <>
+      <div className="w-full h-full flex justify-center items-center">
+        <h1 className="text-center max-md:my-10 text-3xl my-10 font-PlayWrite">
+          Most Popular !!
+        </h1>
+      </div>
+      <motion.div
+        className="w-full h-fit flex max-md:flex-col max-md:h-fit items-center justify-center gap-12"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% of the element is in view
+      >
+        {Image.map((img) => (
+          <motion.section
+            key={img.id}
+            className="relative w-80"
+            variants={itemVariants}
+          >
+            <div className="relative cursor-pointer">
+              <img
+                src={img.src}
+                alt={img.title}
+                className="w-full bg-LightGreenColor h-96 object-contain rounded-xl shadow-lg transition-transform duration-300 transform hover:scale-105"
+              />
+              <div className="mt-10 space-y-5 flex flex-col justify-center items-center duration-300 text-black">
+                <h3 className="text-xl font-bold mb-2 font-PlayWrite">{img.title}</h3>
+                <p className="font-Mate font-semibold">{img.description}</p>
+                <NavButton>Check Out Now</NavButton>
+              </div>
+            </div>
+          </motion.section>
+        ))}
+      </motion.div>
+    </>
+  );
+};
+
+export default Cards;
