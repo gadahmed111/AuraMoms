@@ -58,8 +58,8 @@ const Cards = () => {
         className="w-full h-fit flex max-md:flex-col max-md:h-fit items-center justify-center gap-12"
         variants={containerVariants}
         initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% of the element is in view
+        whileInView={"show"}
+        viewport={{ once: true, amount: 0.3 }} // Ensures it only animates once when 30% of the container is in view
       >
         {Image.map((img) => (
           <motion.section
@@ -74,7 +74,9 @@ const Cards = () => {
                 className="w-full bg-LightGreenColor h-96 object-contain rounded-xl shadow-lg transition-transform duration-300 transform hover:scale-105"
               />
               <div className="mt-10 space-y-5 flex flex-col justify-center items-center duration-300 text-black">
-                <h3 className="text-xl font-bold mb-2 font-PlayWrite">{img.title}</h3>
+                <h3 className="text-xl font-bold mb-2 font-PlayWrite">
+                  {img.title}
+                </h3>
                 <p className="font-Mate font-semibold">{img.description}</p>
                 <NavButton>Check Out Now</NavButton>
               </div>
