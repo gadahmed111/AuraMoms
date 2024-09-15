@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import Divider1 from "../DeviderSections/Divider1";
 import PopularProducts from "../MostProduct/PopularProducts";
 import Navbar from "../Navbar/Navbar";
 import ParallaxSection from "../ParallexSection/ParallexSection";
@@ -11,6 +12,7 @@ function HomePage() {
       <TheCenterPatInHeroSection></TheCenterPatInHeroSection>
       <PopularProducts />
       <ParallaxSection />
+      <Divider1 />
     </>
   );
 }
