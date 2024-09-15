@@ -1,18 +1,12 @@
 /* eslint-disable no-unused-vars */
 // import 'App.css';
 import HomePage from "./components/homePage/mainPage";
+import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <>
-      <main className="h-[500vh]">
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route />
-            <Route />
-            <Route />
-          </Routes>
-        </Router>
+      <main className="h-[400vh]">
+        <HomePage />
       </main>
     </>
   );

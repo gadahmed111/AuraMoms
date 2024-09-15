@@ -39,7 +39,7 @@ const NavItem = () => {
         animate="show"
         exit="exit"
         variants={staggerContainer}
-        className="flex flex-col mt-5 h-fit w-full font-Cabin border-b-2 border-b-slate-300 mb-5  pb-4 gap-4 divide-gray-300 dark:divide-white text-black dark:text-white z-50"
+        className="flex capitalize flex-col mt-5 h-fit w-full font-Cabin border-b-2 border-b-slate-300 mb-5  pb-4 gap-4 divide-gray-300 dark:divide-white text-black dark:text-white z-50"
       >
         <FlyOut
           variants={staggerItem}
@@ -47,23 +47,23 @@ const NavItem = () => {
           FlyoutContent
           className="relative"
         >
-          <FaHome className="absolute -translate-y-1/2 top-1/2 mx-3" />
-          <p className="pl-10 py-3">{t("home")}</p> {/* Translated "Home" */}
+          <FaHome className="absolute -translate-y-1/2 top-1/2 mx-3 " />
+          <p className="pl-10 py-3">home</p> {/* Translated "Home" */}
         </FlyOut>
 
         <FlyOut variants={staggerItem} to="/about" FlyoutContent>
           <HiArchive className="absolute -translate-y-1/2 top-1/2 mx-3" />
-          <p className="pl-10 py-3">{t("about")}</p> {/* Translated "About" */}
+          <p className="pl-10 py-3">about</p> {/* Translated "About" */}
         </FlyOut>
 
         <FlyOut variants={staggerItem} to="/contact" FlyoutContent>
           <IoIosContacts className="absolute -translate-y-1/2 top-1/2 mx-3" />
-          <p className="pl-10 py-3">{t("contact")}</p> {/* Translated "Contact" */}
+          <p className="pl-10 py-3">contact</p> {/* Translated "Contact" */}
         </FlyOut>
 
         <FlyOut variants={staggerItem} to="/shop" FlyoutContent>
           <FaShoppingBasket className="absolute -translate-y-1/2 top-1/2 mx-3 " />
-          <p className="pl-10 py-3">{t("shop")}</p> {/* Translated "Shop" */}
+          <p className="pl-10 py-3">shop</p> {/* Translated "Shop" */}
         </FlyOut>
       </motion.div>
     </>

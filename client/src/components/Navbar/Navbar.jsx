@@ -11,7 +11,6 @@ import { CiShoppingCart } from "react-icons/ci";
 import NavButton from "../ReUseable/NavButton.jsx";
 import ThemeMode from "../ReUseable/DarkModeButton";
 import MobileItems from "./MobileNavItem.jsx";
-import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   // Animation section
@@ -35,13 +34,7 @@ const Navbar = () => {
     exit: { opacity: 0, y: 20 },
   };
 
-  // Translate section
   const [isOpen, setIsOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const changeLanguage = (e) => {
-    i18n.changeLanguage(e.target.value);
-  };
-
   // Toggle the menu open/close
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -49,12 +42,12 @@ const Navbar = () => {
 
   // Section for scroll Nav hide/show
   const { scrollY } = useScroll();
-  const [Hidden, setHidden] = useState(false); // Start with Navbar visible
+  const [Hidden, setHidden] = useState(true); // Start with Navbar visible
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const prevScrollY = scrollY.getPrevious();
 
-    if (latest < prevScrollY && latest > 150) {
+    if (latest < prevScrollY) {
       setHidden(true); // Hide Navbar on upward scroll past 150px
     } else if (latest > prevScrollY) {
       setHidden(false); // Show Navbar on downward scroll
@@ -70,26 +63,20 @@ const Navbar = () => {
         }}
         animate={Hidden ? "hidden" : "visible"}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="flex  w-full justify-between items-center px-4 h-24 text-[#799263] font-Cabin dark:bg-DarkColor shadow-2xl bg-[#fff] z-50"
+        className="flex  sticky top-0 w-full  justify-between items-center px-4 h-24 text-[#799263] font-Cabin dark:bg-DarkBackground shadow-xl bg-[#fff] z-50"
       >
-        <h1 className="text-2xl text-black dark:text-white">Aura Moms</h1>
+        <h1 className="text-2xl text-black dark:text-DarkText">Aura Moms</h1>
         <NavItem />
-
         {/* Desktop Menu */}
         <div className="flex justify-center items-center space-x-6 max-md:hidden">
-          <select
-            onChange={changeLanguage}
-            defaultValue={i18n.language}
-            className="border p-1 rounded-xl hover:border-gray-700 transition-all dark:bg-black dark:text-white"
-          >
-            <option value="en">EN</option>
-            <option value="fr">FR</option>
+          <select className="border p-1 rounded-xl hover:border-gray-700 transition-all dark:bg-black dark:text-white">
+            <option>EN</option>
+            <option>FR</option>
           </select>
           <CiShoppingCart className="cursor-pointer text-2xl hover:text-gray-500 transition-all" />
           <ThemeMode />
-          <NavButton>{t("signUp")}</NavButton>
+          <NavButton className="bg-[#46644c] dark:bg-[#46644c] hover:scale-105 duration-300">signUp</NavButton>
         </div>
-
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
@@ -116,17 +103,17 @@ const Navbar = () => {
           {isOpen && (
             <motion.div
               key="mobileMenu"
-              className="flex flex-col absolute md:hidden top-24 bottom-0 left-0 w-[50vw] bg-[#fff] shadow-xl dark:bg-black text-black dark:text-white z-[40]"
-              initial={{ opacity: 0, x: "-100%" }}
+              className="flex flex-col fixed md:hidden top-24 bottom-0 right-0 w-[50vw] bg-[#fff] shadow-xl dark:bg-black text-black dark:text-white z-[40]"
+              initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "-100%" }}
-              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, x: "100%" }} // Exit animation
+              transition={{ duration: 0.3 }} // The animation when the menu opens
+              exitTransition={{ duration: 0.45 }} // 450ms for exit animation
               variants={staggerContainer}
             >
               <motion.div className="" variants={staggerContainer}>
                 <MobileItems variants={staggerItem} />
               </motion.div>
-
               <motion.div
                 className="flex justify-center items-start flex-col gap-4"
                 variants={staggerContainer}
@@ -136,21 +123,17 @@ const Navbar = () => {
               >
                 <motion.select
                   variants={staggerItem}
-                  onChange={changeLanguage}
-                  defaultValue={i18n.language}
                   className="border p-1 ml-2 rounded-xl hover:border-gray-700 transition-all dark:bg-black dark:text-white"
                 >
-                  <option value="en">EN</option>
-                  <option value="fr">FR</option>
+                  <option>EN</option>
+                  <option>FR</option>
                 </motion.select>
-
                 <motion.div variants={staggerItem} className="pl-2">
                   <ThemeMode />
                 </motion.div>
-
                 <motion.div variants={staggerItem} className="w-full px-2">
-                  <NavButton className="px-2 py-2 text-sm w-full">
-                    {t("signUp")}
+                  <NavButton className="px-2 py-2 text-sm w-full bg-[#46644c] dark:bg-[#46644c]">
+                    signUp
                   </NavButton>
                 </motion.div>
               </motion.div>

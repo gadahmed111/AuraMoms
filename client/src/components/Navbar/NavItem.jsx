@@ -2,24 +2,23 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
 const NavItem = ({ className = "" }) => {
-  const { t } = useTranslation(); // Using translation hook
-
   return (
-    <div className={`${className} flex space-x-12 max-md:hidden text-black dark:text-white`}>
-      <FlyOut to="/" FlyoutContent={<NavBarFlyoutContent />}>
-        <p>{t("home")}</p> {/* Translated text */}
+    <div
+      className={`${className} flex space-x-12 max-md:hidden text-black dark:text-white capitalize`}
+    >
+      <FlyOut to="/" FlyoutContent>
+        <p>home</p>
       </FlyOut>
-      <FlyOut to="/about" FlyoutContent={<NavBarFlyoutContent />}>
-        <p>{t("about")}</p> {/* Translated text */}
+      <FlyOut to="/about" FlyoutContent>
+        <p>about</p>
       </FlyOut>
-      <FlyOut to="/contact" FlyoutContent={<NavBarFlyoutContent />}>
-        <p>{t("contact")}</p> {/* Translated text */}
+      <FlyOut to="/contact" FlyoutContent>
+        <p>contact</p>
       </FlyOut>
-      <FlyOut to="/blog" FlyoutContent={<NavBarFlyoutContent />}>
-        <p>{t("blog")}</p> {/* Translated text */}
+      <FlyOut to="/blog" FlyoutContent>
+        <p>blog</p>
       </FlyOut>
     </div>
   );
@@ -43,25 +42,6 @@ const FlyOut = ({ children, to, FlyoutContent }) => {
            duration-200 ease-out dark:bg-white"
         />
       </NavLink>
-      {open && FlyoutContent}
-    </div>
-  );
-};
-
-const NavBarFlyoutContent = () => {
-  const { t } = useTranslation(); // Using translation hook
-  return (
-    <div className="h-[60vh] w-[50rem] bg-white p-6 shadow-xl">
-      <h1>{t("pricing_content")}</h1> {/* Translated text */}
-    </div>
-  );
-};
-
-const MobileNav = () => {
-  const { t } = useTranslation(); // Using translation hook
-  return (
-    <div>
-      <h1>{t("hello_world")}</h1> {/* Translated text */}
     </div>
   );
 };
