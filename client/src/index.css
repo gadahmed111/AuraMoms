@@ -10,13 +10,25 @@
   @apply transition-colors duration-150;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+:root {
+  --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --box-shadow-dark: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] .box-shadow {
+  box-shadow: var(--box-shadow-light);
+}
+
+[data-theme="dark"] .box-shadow {
+  box-shadow: var(--box-shadow-dark);
+}
+
 
 .startnowBTN {
   border-color: #415d44;
 }
-@media (max-width: 1040px) {
-  .absolute.right-16.bottom-10 {
+@media (max-width: 1240px) {
+  .absolute.right-16.bottom-36 {
     display: none;
   }
   .relative {
@@ -33,4 +45,28 @@
     justify-content: center;
     width: 100%;
   }
+}
+
+.OurMissionImage{
+  width: 100%;
+  margin: 40px 0px;
+}
+.OurMissionImageTwo{
+  width: 300px;
+  margin: 20px 0px;
+}
+.OurMissionImageThree{
+  width: 300px;
+  margin: 20px 0px;
+  margin-top: 10px;
+}
+.AboutUsWORD{
+  margin: 60px 0px;
+}
+.TheMainTitle{
+  font-size: 23px;
+  font-weight: bold;
+}
+.DisPar{
+  font-size: 20px;
 }
