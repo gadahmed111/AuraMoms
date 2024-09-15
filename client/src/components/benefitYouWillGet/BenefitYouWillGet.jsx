@@ -11,7 +11,7 @@ function BenefitYouWillGet() {
         },
     };
     return (
-        <div className="flex gap-20 relative bg-[#7f95eb] text-white p-6 w-5/6 mx-auto rounded-xl overflow-hidden mt-14">
+        <div className="flex gap-20 relative bg-[#7f95eb] text-white p-6 w-5/6 mx-auto rounded-xl overflow-hidden mt-14 mb-20">
             <div className="TheTxtPart">
                 <div className="TitleOfCard text-2xl font-bold mb-7">
                     Simplify Your Parenting Journey

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import NavButton from "../ReUseable/NavButton";
 
@@ -52,14 +51,14 @@ const Cards = () => {
   };
 
   return (
-    <>
+    <div className="dark:text-white flex flex-col items-center">
       <div className="w-full h-full flex justify-center items-center">
-        <h1 className="text-center max-md:my-10 text-3xl my-10 font-PlayWrite">
+        <h1 className="text-center text-3xl font-PlayWrite mb-10">
           Most Popular !!
         </h1>
       </div>
       <motion.div
-        className="w-full h-fit flex max-md:flex-col max-md:h-fit items-center justify-center gap-12"
+        className="w-11/12 max-w-6xl flex flex-wrap justify-center gap-12"
         variants={containerVariants}
         initial="hidden"
         whileInView={"show"}
@@ -68,28 +67,28 @@ const Cards = () => {
         {Image.map((img) => (
           <motion.section
             key={img.id}
-            className="relative w-80"
+            className="relative w-80 flex flex-col items-center"
             variants={itemVariants}
           >
-            <div className="relative cursor-pointer">
+            <div className="relative cursor-pointer flex flex-col items-center">
               <img
                 src={img.src}
                 alt={img.title}
-                className="w-full bg-LightGreenColor h-96 object-contain rounded-xl shadow-lg transition-transform duration-300 transform hover:scale-105"
+                className="w-full h-96 object-contain rounded-xl shadow-2xl transition-transform duration-300 transform hover:scale-105"
               />
-              <div className="mt-10 space-y-5 flex flex-col justify-center items-center duration-300 text-black">
+              <div className="mt-6 space-y-4 text-center text-black dark:text-white">
                 <h3 className="text-xl font-bold mb-2 font-PlayWrite">
                   {img.title}
                 </h3>
                 <p className="font-Mate font-semibold">{img.description}</p>
                 <p className="font-Mate font-bold">{img.Price}</p>
-                <NavButton>Check Out Now</NavButton>
+                <NavButton className="dark:text-white">Check Out Now</NavButton>
               </div>
             </div>
           </motion.section>
         ))}
       </motion.div>
-    </>
+    </div>
   );
 };
 
