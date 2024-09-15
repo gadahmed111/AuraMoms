@@ -9,24 +9,28 @@ const Cards = () => {
       src: "./public/products/Pro1.png",
       title: "Pro 1",
       description: "Very nice and the price is good",
+      Price: "120.00$",
     },
     {
       id: 2,
       src: "./public/products/Pro2.png",
       title: "Pro 2",
       description: "A serene path through the forest.",
+      Price: "125.00$",
     },
     {
       id: 3,
       src: "./public/products/Pro3.png",
       title: "Pro 3",
       description: "A sandy desert under the blue sky.",
+      Price: "90.00$",
     },
     {
       id: 4,
       src: "./public/products/Pro4.png",
       title: "Pro 4",
       description: "An adventure through the desert.",
+      Price: "150.00$",
     },
   ];
 
@@ -78,6 +82,7 @@ const Cards = () => {
                   {img.title}
                 </h3>
                 <p className="font-Mate font-semibold">{img.description}</p>
+                <p className="font-Mate font-bold">{img.Price}</p>
                 <NavButton>Check Out Now</NavButton>
               </div>
             </div>
