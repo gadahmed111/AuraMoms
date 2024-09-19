@@ -1,7 +1,7 @@
  const products = [
     {
         "id": 8069504139446,
-        "title": "Gift Card",
+        "title": "Giftt Card",
         "body_html": "This is a gift card for the store",
         "vendor": "Snowboard Vendor",
         "product_type": "giftcard",
