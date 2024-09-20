@@ -31,7 +31,6 @@ function HomePage() {
        {/* -------------------- The FAQ PAge  */}
       {/* <TheFAQ></TheFAQ> */}
     </div>
-  );
+  )
 }
-
 export default HomePage;
