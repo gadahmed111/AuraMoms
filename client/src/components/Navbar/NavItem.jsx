@@ -37,9 +37,9 @@ const FlyOut = ({ children, to, FlyoutContent }) => {
         {children}
         <span
           style={{ transform: open ? "scaleX(1)" : "scaleX(0)" }}
-          className="absolute -bottom-2 -left-2 h-1 -right-2 
+          className="absolute -bottom-2 -left-2 h-[5.5px] -right-2 
             rounded-full bg-[black] transition-all
-           duration-200 ease-out dark:bg-white"
+           duration-300 ease-in-out dark:bg-white"
         />
       </NavLink>
     </div>

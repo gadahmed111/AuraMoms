@@ -11,7 +11,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import NavButton from "../ReUseable/NavButton.jsx";
 import ThemeMode from "../ReUseable/DarkModeButton";
 import MobileItems from "./MobileNavItem.jsx";
-
+import AuraMoms from "./auraMoms.jsx";
 const Navbar = () => {
   // Animation section
   const staggerContainer = {
@@ -40,17 +40,16 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  // Section for scroll Nav hide/show
   const { scrollY } = useScroll();
-  const [Hidden, setHidden] = useState(true); // Start with Navbar visible
+  const [Hidden, setHidden] = useState(false); // Start with Navbar visible
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const prevScrollY = scrollY.getPrevious();
 
     if (latest < prevScrollY) {
       setHidden(true); // Hide Navbar on upward scroll past 150px
-    } else if (latest > prevScrollY) {
-      setHidden(false); // Show Navbar on downward scroll
+    } else if (latest > prevScrollY || latest <= 150) {
+      setHidden(false); // Show Navbar on downward scroll or scroll above 150px
     }
   });
 
@@ -65,7 +64,8 @@ const Navbar = () => {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="flex  sticky top-0 w-full  justify-between items-center px-4 h-24 text-[#799263] font-Cabin dark:bg-DarkBackground shadow-xl bg-[#fff] z-50"
       >
-        <h1 className="text-2xl text-black dark:text-DarkText">Aura Moms</h1>
+        
+        <AuraMoms />
         <NavItem />
         {/* Desktop Menu */}
         <div className="flex justify-center items-center space-x-6 max-md:hidden">
@@ -75,7 +75,9 @@ const Navbar = () => {
           </select>
           <CiShoppingCart className="cursor-pointer text-2xl hover:text-gray-500 transition-all" />
           <ThemeMode />
-          <NavButton className="bg-[#46644c] dark:bg-[#46644c] hover:scale-105 duration-300">signUp</NavButton>
+          <NavButton className="bg-[#46644c] dark:bg-[#46644c] hover:scale-105 duration-300">
+            signUp
+          </NavButton>
         </div>
         <div className="md:hidden">
           <button
