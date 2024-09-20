@@ -23,14 +23,7 @@ const Cards = () => {
       title: "Pro 3",
       description: "A sandy desert under the blue sky.",
       Price: "90.00$",
-    },
-    {
-      id: 4,
-      src: "./public/products/Pro4.png",
-      title: "Pro 4",
-      description: "An adventure through the desert.",
-      Price: "150.00$",
-    },
+    }
   ];
 
   // Variants for stagger animation

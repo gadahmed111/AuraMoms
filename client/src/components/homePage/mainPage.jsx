@@ -7,23 +7,30 @@ import TheCenterPatInHeroSection from "../hero section center/TheCenterPart";
 import WhoWeAre from '../WhoWeAre/Who we are';
 import TheGreenMan from '../TheGreenManPart/TheGreenMan';
 import Benefit from '../benefitYouWillGet/BenefitYouWillGet'
+import TheAllAboutUsPAge from "../aboutUsPage/aboutus.jsx";
+import TheFAQ from '../FAQPage/FAQPage.jsx';
+import ContactUs from '../ContactUsPart/ContactUs.jsx'
 // import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 function HomePage() {
   return (
-    <>
-      <Navbar />
+    <div className="dark:bg-DarkBackground">
+      {/* -------------------- The Nav */}
+      {/* -------------------- The Home Page Part*/}
+      <Navbar></Navbar>
       <TheCenterPatInHeroSection></TheCenterPatInHeroSection>
       <WhoWeAre></WhoWeAre>
       <TheGreenMan></TheGreenMan>
-      <br />  
       <PopularProducts />
+      <br />  
       <Benefit></Benefit>
       <br />
-      {/* Make Contact us HERE */}
-      {/* Wait The Footer From Omar Farouk */}
-      {/* <ParallaxSection /> */}
-      {/* <Divider1 /> */}
-    </>
+      {/* -------------------- Tha About us Page  */}
+      {/* <TheAllAboutUsPAge></TheAllAboutUsPAge> */}
+      {/*  -------------------- Make Contact us HERE */}
+      <ContactUs></ContactUs>
+       {/* -------------------- The FAQ PAge  */}
+      {/* <TheFAQ></TheFAQ> */}
+    </div>
   );
 }
 
