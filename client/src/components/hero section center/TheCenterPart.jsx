@@ -5,7 +5,7 @@ function TheCenterPart() {
   const FaceBook = useRef();
   const insta = useRef();
   const tiktok = useRef();
-  
+
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
@@ -13,10 +13,10 @@ function TheCenterPart() {
       setIsSmallScreen(window.innerWidth < 282);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize(); // Check on mount
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Variants for text animation
@@ -65,14 +65,14 @@ function TheCenterPart() {
         <motion.div className="TheBigTxt">
           <h3
             className="leading-normal font-extrabold"
-            style={{ fontSize: isSmallScreen ? '1.5rem' : '3rem' }} // Adjust font size based on screen width
+            style={{ fontSize: isSmallScreen ? "1.5rem" : "3rem" }} // Adjust font size based on screen width
           >
             Empowering Moms with <br /> Every Thoughtful Product Choice
           </h3>
         </motion.div>
 
         {/* Subtext Animation */}
-        <motion.div className="tracking-wider mt-9 text-base text-lg leading-normal dark:text-white">
+        <motion.div className="tracking-wider mt-9  text-lg leading-normal dark:text-white">
           <p>
             Supporting moms with practical solutions and resources to make
             parenting
