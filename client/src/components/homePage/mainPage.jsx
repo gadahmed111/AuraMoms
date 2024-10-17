@@ -1,7 +1,14 @@
+import BalanceSection from "../SideBar/BalanceSection";
+import SideBar from "../SideBar/SideBar";
+import MainContent from "../SideBar/mainContent";
 function HomePage() {
   return (
     <>
-    {/* Add The Componts Here Not in App.jsx */}
+      <main>
+        <MainContent />
+        <BalanceSection />
+        <SideBar />
+      </main>
     </>
   );
 }
