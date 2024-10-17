@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import NavButton from "../ReUseable/NavButton";
+import NavButton from "../../../layouts/ReUseable/NavButton";
 
 const Cards = () => {
   const Image = [
@@ -23,7 +23,7 @@ const Cards = () => {
       title: "Pro 3",
       description: "A sandy desert under the blue sky.",
       Price: "90.00$",
-    }
+    },
   ];
 
   // Variants for stagger animation

@@ -1,5 +1,5 @@
 import React from "react";
-import mainPage from "../homePage/mainPage";
+import mainPage from "../Home_/mainPage";
 const auraMoms = () => {
   return (
     <>

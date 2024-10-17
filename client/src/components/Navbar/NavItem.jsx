@@ -17,7 +17,7 @@ const NavItem = ({ className = "" }) => {
       <FlyOut to="/contact" FlyoutContent>
         <p>contact</p>
       </FlyOut>
-      <FlyOut to="/blog" FlyoutContent>
+      <FlyOut to="/Shop" FlyoutContent>
         <p>Shop</p>
       </FlyOut>
     </div>

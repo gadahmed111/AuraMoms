@@ -6,7 +6,7 @@ import TheCardWithTextReversed from "./TheCardWithText Reversed";
 import TheCardWithTextReversedWith4Parts from "./TheCardWithText With 4Parts";
 import Productdesign from "./Product design";
 import ThethreeCards from "./ThethreeCards";
-import FAQS from "../aboutUsPage/FAQS.jsx";
+import FAQS from "../About_US/FAQS.jsx";
 function aboutusPAge() {
   return (
     <div className="dark:bg-DarkBackground dark:text-white">
