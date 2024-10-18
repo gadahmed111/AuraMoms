@@ -5,7 +5,6 @@ import { Home, ShoppingCart, Heart, User } from "lucide-react";
 const VerticalSidebar = () => {
   const [activeItem, setActiveItem] = useState("home");
 
-  // Sidebar items with icons and ids
   const items = [
     { id: "home", icon: Home },
     { id: "loved", icon: Heart },
@@ -13,7 +12,6 @@ const VerticalSidebar = () => {
     { id: "user", icon: User },
   ];
 
-  // Variants for the animations
   const sidebarVariants = {
     hidden: { width: 0, opacity: 0 },
     visible: { width: 64, opacity: 1, transition: { duration: 0.5 } },
