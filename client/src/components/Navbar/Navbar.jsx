@@ -1,12 +1,12 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { debounce } from "lodash"; // Ensure lodash is installed
 import NavItem from "./NavItem.jsx";
 import NavButton from "../../layouts/ReUseable/NavButton.jsx";
 import ThemeMode from "../../layouts/ReUseable/DarkModeButton.jsx";
 import MobileItems from "./MobileNavItem.jsx";
 import AuraMoms from "./auraMoms.jsx";
 import { CiShoppingCart } from "react-icons/ci"; // Normal import, no lazy loading
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,9 +33,11 @@ const Navbar = () => {
         <div className="flex justify-center items-center space-x-6 max-md:hidden">
           <CiShoppingCart className="cursor-pointer text-2xl hover:text-gray-500 transition-all" />
           <ThemeMode />
-          <NavButton className="bg-[#46644c] dark:bg-[#46644c] hover:scale-105 duration-300">
-            signUp
-          </NavButton>
+          <NavLink to="/Sign_up">
+            <NavButton className="bg-[#46644c] dark:bg-[#46644c] hover:scale-105 duration-300">
+              signUp
+            </NavButton>
+          </NavLink>
         </div>
         <div className="md:hidden">
           <button

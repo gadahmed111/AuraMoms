@@ -5,6 +5,7 @@ import TheCenterPatInHeroSection from "./TheCenterPart";
 import WhoWeAre from "../About_US/WhoWeAre/Who we are";
 import TheGreenMan from "./TheGreenMan";
 import Benefit from "./BenefitYouWillGet";
+import Footer from "../Footer/footer";
 function HomePage() {
   return (
     <div className="dark:bg-DarkBackground">
@@ -13,6 +14,7 @@ function HomePage() {
       <TheGreenMan />
       <PopularProducts />
       <Benefit />
+      <Footer />
     </div>
   );
 }
